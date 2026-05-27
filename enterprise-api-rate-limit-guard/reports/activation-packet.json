@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-05-27T12:00:00.000Z",
+  "status": "hold_integrations",
+  "metrics": {
+    "totalIntegrations": 4,
+    "release": 1,
+    "review": 1,
+    "hold": 2,
+    "blockers": 11,
+    "warnings": 12
+  },
+  "integrations": [
+    {
+      "id": "api-invenio-release",
+      "name": "Central Library Invenio Sync",
+      "institution": "North Coast University",
+      "integrationType": "institutional_repository",
+      "status": "release",
+      "contractedSustainedRpm": 600,
+      "provisionedSustainedRpm": 500,
+      "contractedBurstRpm": 1200,
+      "provisionedBurstRpm": 900,
+      "blockers": [],
+      "warnings": [],
+      "actions": [],
+      "auditDigest": "99ba425a4c7f884909ec758334900b2fc1e8d0a1b04b5a38352981a7dcea2054"
+    },
+    {
+      "id": "api-biocore-overlimit",
+      "name": "BioCore Bulk Export",
+      "institution": "BioCore Institute",
+      "integrationType": "external_archive",
+      "status": "hold",
+      "contractedSustainedRpm": 300,
+      "provisionedSustainedRpm": 900,
+      "contractedBurstRpm": 600,
+      "provisionedBurstRpm": 2500,
+      "blockers": [
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "provisioned_sustained_over_contract",
+          "message": "Provisioned sustained requests per minute 900 exceeds contract limit 300."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "provisioned_burst_over_contract",
+          "message": "Provisioned burst requests per minute 2500 exceeds contract limit 600."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "provisioned_daily_export_over_contract",
+          "message": "Provisioned daily export records 25000 exceeds contract limit 10000."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "provisioned_concurrency_over_contract",
+          "message": "Provisioned concurrent export jobs 6 exceeds contract limit 2."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "endpoint_scope_exceeds_contract",
+          "message": "Requested endpoints exceed contract scope: /api/admin.users.delete."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "export_target_exceeds_contract",
+          "message": "Requested export targets exceed contract scope: pubmed-central."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_retry_after_enforcement",
+          "message": "Client is not configured to honor Retry-After."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_idempotency_keys",
+          "message": "Mutating endpoints lack idempotency-key enforcement."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_ip_allowlist",
+          "message": "Private-project API access has no IP allowlist."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "weak_webhook_signing",
+          "message": "Webhook signing algorithm is missing or unsupported."
+        }
+      ],
+      "warnings": [
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_escalation_contact",
+          "message": "Contract has no escalation contact."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "weak_backoff_mode",
+          "message": "Backoff mode is not an accepted rate-limit strategy."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_admin_review_packet",
+          "message": "Private-project access lacks an admin review packet."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_webhook_secret_rotation",
+          "message": "Webhook secret rotation date is not recorded."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_dead_letter_queue",
+          "message": "Webhook delivery has no dead-letter queue."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "unsafe_webhook_retry_policy",
+          "message": "Webhook retry policy can create retry storms."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_load_test",
+          "message": "No recent sandbox load-test evidence is attached."
+        },
+        {
+          "integrationId": "api-biocore-overlimit",
+          "name": "BioCore Bulk Export",
+          "code": "missing_dashboard_tag",
+          "message": "Admin dashboard tag or cost center is missing."
+        }
+      ],
+      "actions": [
+        "Add an escalation contact for rate-limit or webhook incident response.",
+        "Lower sustained requests per minute to 300 or execute an amended contract.",
+        "Lower burst requests per minute to 600 or execute an amended contract.",
+        "Lower daily export records to 10000 or execute an amended contract.",
+        "Lower concurrent export jobs to 2 or execute an amended contract.",
+        "Remove uncontracted endpoints or amend the integration scope.",
+        "Remove unapproved export targets or attach sponsor approval.",
+        "Require Retry-After handling before production API key activation.",
+        "Switch the integration to Retry-After or exponential jitter backoff.",
+        "Require idempotency keys for write/create/delete endpoints.",
+        "Add an institutional IP allowlist before enabling private project access.",
+        "Generate an admin dashboard review packet for private project access.",
+        "Use HMAC-SHA256 or HMAC-SHA512 for webhook event signing.",
+        "Record webhook secret rotation evidence before production activation.",
+        "Configure a dead-letter queue for failed webhook deliveries.",
+        "Cap webhook retries at 8 attempts with jitter.",
+        "Attach sandbox load-test evidence for the contracted limits.",
+        "Add an admin dashboard tag or cost center for usage attribution."
+      ],
+      "auditDigest": "429a361724aacdeb8f0ab2bf342307ed15a318055adb0d0d5755a024db4dcf42"
+    },
+    {
+      "id": "api-canvas-passback-hold",
+      "name": "Canvas Grade Passback",
+      "institution": "East Valley University",
+      "integrationType": "learning_management_system",
+      "status": "hold",
+      "contractedSustainedRpm": 200,
+      "provisionedSustainedRpm": 175,
+      "contractedBurstRpm": 400,
+      "provisionedBurstRpm": 350,
+      "blockers": [
+        {
+          "integrationId": "api-canvas-passback-hold",
+          "name": "Canvas Grade Passback",
+          "code": "missing_idempotency_keys",
+          "message": "Mutating endpoints lack idempotency-key enforcement."
+        }
+      ],
+      "warnings": [
+        {
+          "integrationId": "api-canvas-passback-hold",
+          "name": "Canvas Grade Passback",
+          "code": "stale_webhook_secret",
+          "message": "Webhook signing secret is past the rotation window."
+        },
+        {
+          "integrationId": "api-canvas-passback-hold",
+          "name": "Canvas Grade Passback",
+          "code": "missing_dead_letter_queue",
+          "message": "Webhook delivery has no dead-letter queue."
+        },
+        {
+          "integrationId": "api-canvas-passback-hold",
+          "name": "Canvas Grade Passback",
+          "code": "stale_load_test",
+          "message": "Sandbox load-test evidence is stale."
+        }
+      ],
+      "actions": [
+        "Require idempotency keys for write/create/delete endpoints.",
+        "Rotate the webhook signing secret before production activation.",
+        "Configure a dead-letter queue for failed webhook deliveries.",
+        "Refresh sandbox load-test evidence before production activation."
+      ],
+      "auditDigest": "557a31e4d9fd0a439665ee4ed7768add567fb591bda25bb66e94b4f3cbeaae87"
+    },
+    {
+      "id": "api-moodle-review",
+      "name": "Moodle Read Analytics",
+      "institution": "Cedar Climate College",
+      "integrationType": "learning_management_system",
+      "status": "review",
+      "contractedSustainedRpm": 150,
+      "provisionedSustainedRpm": 100,
+      "contractedBurstRpm": 300,
+      "provisionedBurstRpm": 200,
+      "blockers": [],
+      "warnings": [
+        {
+          "integrationId": "api-moodle-review",
+          "name": "Moodle Read Analytics",
+          "code": "missing_dashboard_tag",
+          "message": "Admin dashboard tag or cost center is missing."
+        }
+      ],
+      "actions": [
+        "Add an admin dashboard tag or cost center for usage attribution."
+      ],
+      "auditDigest": "1aac7e9eef312bef86baa2dcb8aca96cb61e6dee0ff5704094c51997b6d1e98d"
+    }
+  ],
+  "auditDigest": "273861e84d3746b64d6560e9f717e1607a7cc0975bbc0825b0ec2b5336039eb3"
+}

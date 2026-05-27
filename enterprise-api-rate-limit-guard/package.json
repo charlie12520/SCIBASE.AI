@@ -1,0 +1,13 @@
+{
+  "name": "enterprise-api-rate-limit-guard",
+  "version": "1.0.0",
+  "description": "Synthetic enterprise API rate-limit contract guard for SCIBASE Enterprise Tooling.",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "check": "node --check index.js && node --check sample-data.js && node --check test.js && node --check demo.js",
+    "test": "node test.js",
+    "demo": "node demo.js",
+    "demo:video": "python make-demo-video.py"
+  }
+}
