@@ -81,8 +81,14 @@ function evaluateRenewal(renewal, policy = DEFAULT_POLICY) {
     }
   }
 
-  if (seatDelta(renewal) !== 0 && !notice.seatOrUsageSummary) {
-    addIssue(warnings, renewal, "missing_seat_usage_summary", "Seat or usage delta is not summarized for the customer.");
+  const changedSeats = Math.abs(seatDelta(renewal));
+  if (changedSeats > policy.maxSeatDeltaWithoutDisclosure && !notice.seatOrUsageSummary) {
+    addIssue(
+      warnings,
+      renewal,
+      "missing_seat_usage_summary",
+      "Seat or usage delta is not summarized for the customer.",
+    );
     actions.push("Add seat and usage deltas to the notice before renewal approval.");
   }
 

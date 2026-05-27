@@ -1,5 +1,5 @@
 const assert = require("node:assert/strict");
-const { evaluatePortfolio, evaluateRenewal, stableDigest } = require("./index");
+const { DEFAULT_POLICY, evaluatePortfolio, evaluateRenewal, stableDigest } = require("./index");
 const { sampleRenewals } = require("./sample-data");
 
 function issueCodes(result) {
@@ -26,6 +26,32 @@ const trial = evaluateRenewal(sampleRenewals[3]);
 assert.equal(trial.status, "hold");
 assert.ok(issueCodes(trial).includes("missing_cancellation_link"));
 assert.ok(issueCodes(trial).includes("missing_trial_conversion_notice"));
+
+const staleTerms = evaluateRenewal({
+  ...sampleRenewals[0],
+  currentTermsVersion: "2026.05",
+});
+assert.equal(staleTerms.status, "hold");
+assert.ok(issueCodes(staleTerms).includes("terms_version_mismatch"));
+
+const seatTolerance = evaluateRenewal(
+  {
+    ...sampleRenewals[2],
+    currentSeats: 600,
+    nextSeats: 602,
+    purchaseOrder: { status: "approved", reference: "EVU-PO-7821" },
+    notice: {
+      ...sampleRenewals[2].notice,
+      procurementContact: "procurement@example.test",
+    },
+  },
+  {
+    ...DEFAULT_POLICY,
+    maxSeatDeltaWithoutDisclosure: 5,
+  },
+);
+assert.equal(seatTolerance.status, "release");
+assert.ok(!issueCodes(seatTolerance).includes("missing_seat_usage_summary"));
 
 const portfolio = evaluatePortfolio(sampleRenewals);
 assert.equal(portfolio.status, "hold_renewals");

@@ -21,6 +21,7 @@ This guard evaluates upcoming subscription, lab, and institutional renewals befo
 - `test.js` - dependency-free regression tests
 - `demo.js` - generates reviewer JSON, Markdown, and SVG artifacts in `reports/`
 - `make-demo-video.py` - optional short MP4 demo generator for bounty review
+- `REQUIREMENT_MAP.md` - maps the narrow module to issue #20 revenue-infrastructure requirements
 
 ## Validation
 
