@@ -1,0 +1,144 @@
+{
+  "generatedAt": "2026-05-27T12:00:00.000Z",
+  "status": "hold_renewals",
+  "metrics": {
+    "totalRenewals": 4,
+    "release": 1,
+    "review": 0,
+    "hold": 3,
+    "blockers": 8,
+    "warnings": 2
+  },
+  "renewals": [
+    {
+      "id": "ren-ready-lab-pro",
+      "account": "Northstar Genomics Lab",
+      "customerType": "lab",
+      "renewalDate": "2026-06-15T00:00:00.000Z",
+      "status": "release",
+      "daysOfNotice": 20,
+      "requiredNoticeDays": 7,
+      "blockers": [],
+      "warnings": [],
+      "actions": [],
+      "auditDigest": "5d48356e90c45fdc7ebeee12470f2a50adc4782ddade444fba7add05b26d02b8"
+    },
+    {
+      "id": "ren-late-price-change",
+      "account": "Field Robotics Group",
+      "customerType": "lab",
+      "renewalDate": "2026-06-20T00:00:00.000Z",
+      "status": "hold",
+      "daysOfNotice": 18,
+      "requiredNoticeDays": 30,
+      "blockers": [
+        {
+          "renewalId": "ren-late-price-change",
+          "account": "Field Robotics Group",
+          "code": "short_notice_window",
+          "message": "Notice window is 18 days; required minimum is 30 days."
+        },
+        {
+          "renewalId": "ren-late-price-change",
+          "account": "Field Robotics Group",
+          "code": "missing_price_change_summary",
+          "message": "Price change is not disclosed in the notice."
+        },
+        {
+          "renewalId": "ren-late-price-change",
+          "account": "Field Robotics Group",
+          "code": "late_price_change_notice",
+          "message": "Price change notice is 18 days; required minimum is 30 days."
+        }
+      ],
+      "warnings": [],
+      "actions": [
+        "Hold renewal until the minimum notice window is satisfied or finance approves an exception.",
+        "Disclose old price, new price, delta, and effective date.",
+        "Delay the changed price or send a corrected notice with a compliant effective date."
+      ],
+      "auditDigest": "94fbcacbd9d8f1e1be38d11187e2488af72aca85ee216841cc1c4919b982fd66"
+    },
+    {
+      "id": "ren-institution-po-hold",
+      "account": "East Valley University",
+      "customerType": "institution",
+      "renewalDate": "2026-07-01T00:00:00.000Z",
+      "status": "hold",
+      "daysOfNotice": 46,
+      "requiredNoticeDays": 45,
+      "blockers": [
+        {
+          "renewalId": "ren-institution-po-hold",
+          "account": "East Valley University",
+          "code": "missing_po_approval",
+          "message": "Institutional renewal lacks approved purchase-order evidence."
+        }
+      ],
+      "warnings": [
+        {
+          "renewalId": "ren-institution-po-hold",
+          "account": "East Valley University",
+          "code": "missing_seat_usage_summary",
+          "message": "Seat or usage delta is not summarized for the customer."
+        },
+        {
+          "renewalId": "ren-institution-po-hold",
+          "account": "East Valley University",
+          "code": "missing_procurement_contact",
+          "message": "Notice does not name the institutional procurement contact."
+        }
+      ],
+      "actions": [
+        "Add seat and usage deltas to the notice before renewal approval.",
+        "Collect or attach PO renewal approval before invoicing.",
+        "Add procurement owner and renewal approval path to the notice packet."
+      ],
+      "auditDigest": "cf76998f7a95fc3c4dcf47dc488176f8d1a309fccd9563f77c649356649439b5"
+    },
+    {
+      "id": "ren-trial-conversion-gap",
+      "account": "Cedar Climate Fellows",
+      "customerType": "individual",
+      "renewalDate": "2026-06-03T00:00:00.000Z",
+      "status": "hold",
+      "daysOfNotice": 2,
+      "requiredNoticeDays": 30,
+      "blockers": [
+        {
+          "renewalId": "ren-trial-conversion-gap",
+          "account": "Cedar Climate Fellows",
+          "code": "short_notice_window",
+          "message": "Notice window is 2 days; required minimum is 30 days."
+        },
+        {
+          "renewalId": "ren-trial-conversion-gap",
+          "account": "Cedar Climate Fellows",
+          "code": "missing_cancellation_link",
+          "message": "Auto-renewal notice has no cancellation link."
+        },
+        {
+          "renewalId": "ren-trial-conversion-gap",
+          "account": "Cedar Climate Fellows",
+          "code": "late_price_change_notice",
+          "message": "Price change notice is 2 days; required minimum is 30 days."
+        },
+        {
+          "renewalId": "ren-trial-conversion-gap",
+          "account": "Cedar Climate Fellows",
+          "code": "missing_trial_conversion_notice",
+          "message": "Trial-to-paid conversion terms are not disclosed."
+        }
+      ],
+      "warnings": [],
+      "actions": [
+        "Hold renewal until the minimum notice window is satisfied or finance approves an exception.",
+        "Add a self-serve cancellation or opt-out URL to the customer notice.",
+        "Delay the changed price or send a corrected notice with a compliant effective date.",
+        "Send a trial conversion notice with paid start date, price, and cancellation instructions."
+      ],
+      "auditDigest": "3ac7d9234434dea51c8f8c9b4459dcb9eece2fbd4105e25626ef27db175f9350"
+    }
+  ],
+  "auditDigest": "0e79ce6bdc5726a3e847de34d1182cb7e488485f3d26d592f31ae4ef04d670bf"
+}

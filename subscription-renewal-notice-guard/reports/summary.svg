@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="600" viewBox="0 0 1160 600">
+<rect width="1160" height="600" fill="#f8fafc"/>
+<text x="60" y="62" font-size="34" font-weight="800" fill="#111827">Subscription Renewal Notice Guard</text>
+<text x="60" y="98" font-size="18" fill="#4b5563">Pre-invoice checks for renewal notice timing, consent, disclosures, and institutional approval.</text>
+<g>
+  <rect x="60" y="118" width="220" height="44" rx="8" fill="#111827"/>
+  <text x="170" y="147" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">hold_renewals</text>
+  <text x="310" y="147" font-size="17" fill="#374151">8 blockers, 2 warnings across 4 renewals</text>
+</g>
+<g>
+  <rect x="60" y="150" width="1040" height="72" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="90" y="178" font-size="22" font-weight="700" fill="#111827">Northstar Genomics Lab</text>
+  <text x="90" y="204" font-size="16" fill="#4b5563">ren-ready-lab-pro</text>
+  <rect x="780" y="168" width="140" height="36" rx="6" fill="#0f766e"/>
+  <text x="850" y="192" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">RELEASE</text>
+  <text x="950" y="182" font-size="15" fill="#374151">B 0 / W 0</text>
+</g>
+<g>
+  <rect x="60" y="246" width="1040" height="72" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="90" y="274" font-size="22" font-weight="700" fill="#111827">Field Robotics Group</text>
+  <text x="90" y="300" font-size="16" fill="#4b5563">ren-late-price-change</text>
+  <rect x="780" y="264" width="140" height="36" rx="6" fill="#b91c1c"/>
+  <text x="850" y="288" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">HOLD</text>
+  <text x="950" y="278" font-size="15" fill="#374151">B 3 / W 0</text>
+</g>
+<g>
+  <rect x="60" y="342" width="1040" height="72" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="90" y="370" font-size="22" font-weight="700" fill="#111827">East Valley University</text>
+  <text x="90" y="396" font-size="16" fill="#4b5563">ren-institution-po-hold</text>
+  <rect x="780" y="360" width="140" height="36" rx="6" fill="#b91c1c"/>
+  <text x="850" y="384" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">HOLD</text>
+  <text x="950" y="374" font-size="15" fill="#374151">B 1 / W 2</text>
+</g>
+<g>
+  <rect x="60" y="438" width="1040" height="72" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="90" y="466" font-size="22" font-weight="700" fill="#111827">Cedar Climate Fellows</text>
+  <text x="90" y="492" font-size="16" fill="#4b5563">ren-trial-conversion-gap</text>
+  <rect x="780" y="456" width="140" height="36" rx="6" fill="#b91c1c"/>
+  <text x="850" y="480" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">HOLD</text>
+  <text x="950" y="470" font-size="15" fill="#374151">B 4 / W 0</text>
+</g>
+<text x="60" y="560" font-size="13" fill="#6b7280">Synthetic demo data only. Audit digest 0e79ce6bdc5726a3e847de34...</text>
+</svg>
